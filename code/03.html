@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            
+            
+            $("span").eq(0).prop("demo", "it666");
+            $("span").eq(1).prop("demo", "lnj");
+            console.log($("span").prop("demo"));
+
+            $("span").removeProp("demo");
+           
+
+           
+
+        });
+    </script>
+</head>
+<body>
+    <span class="span1" name="it666"></span>
+    <span class="span2" name="lnj"></span>
+    
+</body>
+</html>
