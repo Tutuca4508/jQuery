@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <style>
+        img{
+            width:200px;
+            margin-top: 20px;;
+        }
+    </style>
+    <script>
+        $(function() {
+            var btn = document.querySelector('button')
+            btn.addEventListener('click', function(e) {
+                var text = document.querySelector('input').value
+                $('img').attr('src','./images/' + text + '.jpg')
+            })
+            
+        
+    })
+    </script>
+</head>
+<body>
+    <input type="text">
+    <button>提交</button><br>
+    <img src="./images/海滩.jpg" alt="">
+</body>
+</html>

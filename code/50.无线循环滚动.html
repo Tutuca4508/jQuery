@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width:600px;
+            border: 1px red solid;
+            overflow: hidden;
+            margin: 200px auto;
+        }
+        img{
+            width: 400px;
+        }
+        ul{
+            width: 2400px;
+            background-color: black;
+        }
+        li{
+            list-style: none;
+            float: left;
+        }
+    </style>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var offset = 0;
+            var timer;
+            function autoPlay() {
+                timer = setInterval(function () {
+                offset += -10
+                if (offset <= -1600) {
+                    offset = 0
+                }
+                $("ul").css("marginLeft",offset)
+
+                },50)
+            }
+            autoPlay()
+
+            $("li").hover(function () {
+                clearInterval(timer);
+                $(this).siblings().fadeTo(100,0.5);
+                $(this).fadeTo(100,1)
+
+            },function () {
+                autoPlay();
+                $("li").fadeTo(100,1)
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="./images/落日.jpg" alt=""></li>
+            <li><img src="./images/海滩.jpg" alt=""></li>
+            <li><img src="./images/马路.jpg" alt=""></li>
+            <li><img src="./images/背影.jpg" alt=""></li>
+            <li><img src="./images/落日.jpg" alt=""></li>
+            <li><img src="./images/海滩.jpg" alt=""></li>
+            
+        </ul>
+    </div>
+</body>
+</html>

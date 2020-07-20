@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <style>
+        img {
+            width:300px;
+            
+        }
+        .picbox{
+            width:380px;
+            overflow: hidden;
+            border:1px black solid
+        }
+        ul{
+            list-style: none;
+        }
+        .nav>li{
+            float:left;
+            background-color: pink;
+            
+            width: 65px;
+            height: 20px;
+            padding: 5px 5px;
+            text-align: center;
+        }
+        .nav>.current {
+            background-color: white;
+        }
+        .pic>li{
+            display: none;
+        }
+        .pic>.show{
+            display: block;
+        }
+    </style>
+    <script>
+        $(function() {
+            $(".nav>li").mouseenter(function () {
+                $(this).addClass("current");
+                $(this).siblings().removeClass("current");
+                var index = $(this).index()
+                var $pi = $(".pic>li").eq(index)
+                $pi.addClass("show")
+                $pi.siblings().removeClass("show")
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <div class="picbox">
+        <ul class="nav">
+            <li class="current">落日</li>
+            <li>马路</li>
+            <li>海滩</li>
+            <li>背影</li>
+        </ul>
+        <ul class="pic">
+            <li class="show"><img src="./images/落日.jpg" alt=""></li>
+            <li><img src="./images/马路.jpg" alt=""></li>
+            <li><img src="./images/海滩.jpg" alt=""></li>
+            <li><img src="./images/背影.jpg" alt=""></li>
+        </ul>
+    </div>
+    
+</body>
+</html>
